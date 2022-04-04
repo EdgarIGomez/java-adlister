@@ -35,14 +35,5 @@
     }
 
   %>
-
-  <%--    <c:choose>--%>
-  <%--        <c:when test="${username.includesIgnores}">--%>
-  <%--            <p>boolean_expression_1 was true</p>--%>
-  <%--        </c:when>--%>
-  <%--        <c:otherwise>--%>
-  <%--            <p>none of the above tests were true</p>--%>
-  <%--        </c:otherwise>--%>
-  <%--    </c:choose>--%>
 </body>
 </html>
