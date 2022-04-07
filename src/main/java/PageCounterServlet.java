@@ -5,22 +5,22 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+@WebServlet(name = "PageCounterServlet", urlPatterns = "/count")
+public class PageCounterServlet extends HttpServlet {
 
-@WebServlet(name = "HelloWorldServlet", urlPatterns = "/hello")
-public class HelloWorldServlet extends HttpServlet {
-
-//    private int counter = 0;
+    private int counter = 0;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
-        String hello = "<h1>Hello, World!</h1>";
 
-        if(request.getParameter("name") != null){
-            hello = "<h1>Hello, " +  request.getParameter("name") + "!</h1>";
+        if(request.getParameter("counter") != null){
+            counter = 0;
         }
-
+        counter++;
+        response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println(hello);
+        out.println("<h2> The current page count is at: " + counter + "<h2>");
+
+
 
     }
 }
